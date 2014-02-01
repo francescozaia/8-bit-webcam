@@ -1,0 +1,22 @@
+block variables
+doctype 5
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title #{title}
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='Webcam')
+        meta(name='author', content='Francesco Zaia')
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Droid+Sans:400,700')
+        link(rel='stylesheet', href='/css/main.css')
+        link(rel='icon', href='./favicon.ico')
+    body
+        h1#info #{allowCamers}
+        div#notSupported #{notSupported}
+        pre#ascii
+        //canvas#cnv
+        button#pause pause/resume
+        div#imageContainer
+        a(href='https://github.com/francescozaia', target='blank') view on github
+        script(src='/js/camera.js')
+        script(src="/js/index.js")
