@@ -14,7 +14,7 @@ app.set('view engine', 'jade');
 
 app.get('/', function(req, res){
     res.render('index', {
-        title       : "Webcam title",
+        title       : "8-bit webcam title",
         allowCamera : "Please allow this page to access your camera.",
         notSupported: "Your browser does not support the Camera API."
     });
