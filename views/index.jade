@@ -14,8 +14,15 @@ html(lang='en')
         h1#info #{allowCamers}
         div#notSupported #{notSupported}
         //canvas#cnv
+
+        div#main
         button#pause pause/resume
-        div#imageContainer
+        p
+            input(type='checkbox' name='rgb')
+            label(for='rgb') Enable 8-bit RGB
+        p
+            input(type='checkbox' name='pixel')
+            label(for='pixel') Enable Pixelate
         a(href='https://github.com/francescozaia/8-bit-webcam', target='blank') view on github
         script(src='/js/camera.js')
         script(src="/js/index.js")
