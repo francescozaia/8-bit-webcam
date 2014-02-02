@@ -19,10 +19,10 @@ module.exports = function (grunt) {
         jasmine: {
             all: {
                 src: [
-                    'static/scripts/module.js'
+                    //'static/js/index.js'
                 ],
                 options: {
-                    'specs': 'test/module.spec.js'
+                    specs: 'test/index.spec.js'
                 }
             }
         },
