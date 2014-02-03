@@ -1,5 +1,5 @@
 {
-  "name": "8-bit webcam",
+  "name": "webcam",
   "version": "0.1.0",
   "main": "_server/main.js",
   "scripts": {
