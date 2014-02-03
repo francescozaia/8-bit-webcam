@@ -1,6 +1,4 @@
-
 ;(function ( _app, undefined ) {
-    'use strict';
 
     "use strict";
 
