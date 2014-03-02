@@ -1,8 +1,7 @@
 "use strict";
 
 var express = require('express'),
-    jade = require('jade'),
-    fs = require('fs');
+    jade = require('jade');
 
 var app = express();
 
