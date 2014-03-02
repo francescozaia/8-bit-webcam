@@ -1,0 +1,65 @@
+@import "lesshat.less";
+
+html {
+  background: #F2F0F1;
+}
+body {
+  color: #505862;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: center;
+  > img {
+    border: 1px solid #000;
+  }
+}
+a, a:visited {
+  cursor: pointer;
+  color: #455466;
+  text-decoration: none;
+  &:active, &:hover {
+    color: #77C7DC;
+  }
+}
+
+
+header, .content, footer {
+  margin: 0px auto 20px;
+  padding: 0 20px;
+}
+
+/* header */
+header {
+  border-bottom: 2px dotted #F3615F;
+  font-weight: bold;
+  h1 {
+    display: inline-block;
+    color: #F3615F;
+    padding-right:12px;
+  }
+}
+/* content */
+  #notSupported {
+    display: none;
+  }
+
+  #pause {
+    margin: 0 auto;
+    display: none;
+  }
+  .controls {
+    .inner-controls {
+      width: 300px;
+      display: inline-block;
+    }
+  }
+
+/* footer */
+footer {
+  font-size: 80%;
+  border-top: 2px dotted #F3615F;
+  margin-top: 2em;
+  overflow: hidden;
+  .contact {
+    padding-top: 1em;
+    float: left;
+  }
+}

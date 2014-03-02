@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="8-bit webcam">
+    <meta name="author" content="Francesco Zaia">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet"  href="//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">8-bit camera</h1>
+        <a href="/" class="extra">Home</a>
+        <a href="/about">About</a>
+    </header>
+    <h1 id="info">Please allow this page to access your camera.</h1>
+    <div id="notSupported">Your browser does not support the Camera API.</div>
+    <div id="main"></div>
+    <div class="controls">
+        <div class="inner-controls">
+            <p>
+                <input type="checkbox" name="rgb" id="rgb">
+                <label for="rgb">Enable 8-bit RGB</label>
+            </p>
+            <p>
+                <input type="checkbox" name="bw" id="bw">
+                <label for="bw">Enable 8-bit grayscale</label>
+            </p>
+        </div>
+        <div class="inner-controls">
+            <p>
+                <input type="checkbox" name="pixel" id="pixel">
+                <label for="pixel">Enable low-res</label>
+            </p>
+            <p>
+                <input type="checkbox" name="bigpixel" id="bigpixel">
+                <label for="bigpixel">Enable ultra low-res</label>
+            </p>
+        </div>
+        <p><button id="pause">pause/resume</button></p>
+    </div>
+    <footer>
+        <a href="https://github.com/francescozaia/8-bit-webcam" target="blank">view on github</a>
+        <script src="/js/camera.js"></script>
+        <script src="/js/index.js"></script>
+    </footer>
+
+</body>
+</html>

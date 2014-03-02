@@ -7,12 +7,12 @@ module.exports = function (grunt) {
     grunt.initConfig({
         _staticPath  : 'static',
         pkg: grunt.file.readJSON('package.json'),
-        express: {
+        connect: {
             dev: {
                 options: {
-                    port: 3000,
-                    hostname: 'localhost',
-                    server: path.resolve('./_server/server')
+                    port: 9001,
+                    base: 'www',
+                    keepalive: true
                 }
             }
         },
@@ -43,19 +43,18 @@ module.exports = function (grunt) {
                     optimization: 2
                 },
                 files: {
-                    "static/css/main.css": "static/less/main.less"
+                    "www/css/main.css": "www/less/main.less",
+                    "www/css/normalize.css": "www/less/normalize.less"
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-express');
+    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-    grunt.registerTask('default', 'Start dev server.', ['express', 'watch']);
-
-    grunt.registerTask('test', 'Test.', ['jasmine']);
+    grunt.registerTask('default', 'Start dev server.', ['connect']);
 
 };
