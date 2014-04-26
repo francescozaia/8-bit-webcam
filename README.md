@@ -8,6 +8,3 @@ TODO:
 * Performance
 * Square format
 * Templates for HTML
-
-Preview:
-http://www.francescozaia.com/francescozaia/8-bit-webcam/
