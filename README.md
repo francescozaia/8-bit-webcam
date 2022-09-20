@@ -1,5 +1,5 @@
-8-bit webcam
-============
+[old] 8-bit webcam
+==================
 
 [![Dependencies](https://david-dm.org/francescozaia/8-bit-webcam.png)](https://david-dm.org/francescozaia/8-bit-webcam.png)
 
