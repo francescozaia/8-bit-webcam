@@ -125,6 +125,8 @@
 
             onFrame: function(canvas) {
 
+                var sourceCanvas = canvas;
+
                 if (_app._checkedRGB || _app._checkedBW) {
 
                     var imgData = canvas.getContext("2d").getImageData(0, 0, canvas.width, canvas.height);
@@ -144,10 +146,7 @@
                     }
 
                     _imageCanvasContext.putImageData(imgData,0,0);
-
-                    _imageElement.src = _imageCanvas.toDataURL("image/png");
-                } else {
-                    _imageElement.src = canvas.toDataURL("image/png");
+                    sourceCanvas = _imageCanvas;
                 }
 
                 if (_app._checkedPixel || _app._checkedBigPixel) {
@@ -160,12 +159,13 @@
                         _yres = 60;
                     }
 
-                    _pixelCanvasContext.drawImage(_imageElement, 0, 0, _xres, _yres);
+                    _pixelCanvasContext.drawImage(sourceCanvas, 0, 0, _xres, _yres);
                     _pixelCanvasContext.drawImage(_pixelCanvas, 0, 0, _xres, _yres, 0, 0, _pixelCanvas.width, _pixelCanvas.height);
 
                     _imageElement.src = _pixelCanvas.toDataURL("image/png");
+                } else {
+                    _imageElement.src = sourceCanvas.toDataURL("image/png");
                 }
-
 
 
             },
