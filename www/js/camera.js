@@ -15,26 +15,40 @@ var camera = (function() {
 		video = document.createElement("video");
 		video.setAttribute('width', options.width);
 		video.setAttribute('height', options.height);
+		video.setAttribute('autoplay', '');
+		video.setAttribute('playsinline', '');
 
-		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-		window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
-
-		if (navigator.getUserMedia) {
-			navigator.getUserMedia({
+		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices.getUserMedia({
 				video: true
-			}, function(stream) {
+			}).then(function(stream) {
 				options.onSuccess();
-
-				if (video.mozSrcObject !== undefined) { // hack for Firefox < 19
-					video.mozSrcObject = stream;
-				} else {
-					video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
-				}
-				
+				video.srcObject = stream;
 				initCanvas();
-			}, options.onError);
+			}).catch(function(error) {
+				options.onError(error);
+			});
 		} else {
-			options.onNotSupported();
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+			window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+
+			if (navigator.getUserMedia) {
+				navigator.getUserMedia({
+					video: true
+				}, function(stream) {
+					options.onSuccess();
+
+					if (video.mozSrcObject !== undefined) { // hack for Firefox < 19
+						video.mozSrcObject = stream;
+					} else {
+						video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+					}
+
+					initCanvas();
+				}, options.onError);
+			} else {
+				options.onNotSupported();
+			}
 		}
 	}
 
