@@ -9,7 +9,7 @@
     "author": "Francesco Zaia",
     "license": "MIT",
     "engines": {
-        "node": "0.10.x"
+        "node": ">=14.0.0"
     },
     "homepage": "index.html",
     "devDependencies" : {
